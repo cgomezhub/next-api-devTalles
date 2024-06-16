@@ -14,7 +14,7 @@ const menuItems = [
   {
     icon: <IoCheckboxOutline />,
     title: "Rest TODOS",
-    path: "dashboard/rest-todos",
+    path: "/dashboard/rest-todos",
   },
   {
     icon: <IoListOutline />,

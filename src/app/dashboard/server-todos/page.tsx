@@ -1,3 +1,4 @@
+
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
@@ -9,15 +10,19 @@ export const metadata = {
   description: "SEO Title",
 };
 
-export default async function RestTodosPage() {
+export default async function ServerActionsPage() {
   const todos = await prisma.todo.findMany({ orderBy: { description: "asc" } });
+
+  console.log("procesado");
   return (
-    <div>
+    <>
+      <span className="Stext-3xl font-bold mb-20">Server Actions</span>
+
       <div className="w-full px-5 mx-5 mb-5">
         <NewTodo />
       </div>
 
       <TodoGrid todos={todos} />
-    </div>
+    </>
   );
 }
