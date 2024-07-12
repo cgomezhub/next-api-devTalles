@@ -1,18 +1,27 @@
-"use client";
+'use client';
 
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
 
-import { addTodo, deleteCompletedTodos } from "../actions/todo-actions";
+import { deleteCompleted } from "../actions/todo-actions";
+
+ import {createTodo} from "../helpers/todos";
+import { useRouter } from "next/navigation";
 
 export const NewTodo = () => {
+
+  const router = useRouter();
   const [description, setDescription] = useState("");
 
   const onSubmit = async(e: FormEvent) => {
     e.preventDefault();
     if (description.trim().length === 0) return;
 
-     await addTodo(description);
+    //  await createTodo(description);
+
+    await createTodo(description);
+
+    router.refresh();
 
     setDescription("");
   };
@@ -38,7 +47,7 @@ export const NewTodo = () => {
       <span className="flex flex-1"></span>
 
       <button
-        onClick={() => deleteCompletedTodos()}
+        onClick={() => deleteCompleted()}
         type="button"
         className="flex items-center justify-center rounded ml-2 bg-red-400 p-2 text-white hover:bg-red-700 transition-all"
       >

@@ -2,7 +2,7 @@
 const nextConfig = {
 
     images: {
-        domains: ['tailus.io'],
+        domains: ['tailus.io', 'avatars.githubusercontent.com', 'lh3.googleusercontent.com'],
       },
 };
 

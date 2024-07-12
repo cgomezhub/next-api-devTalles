@@ -39,6 +39,11 @@ Pasos para levantar la app en desarrollo
 
     5. Ejecutar el SEED (en Postman) para [cargar la base de datos local](localhost:3000/api/seed)
 
+    ## Nota: usuario por defecto
+        usuario: test1@gmail.com
+        password: test1
+
+
 
     ```
 
